@@ -1,0 +1,209 @@
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+import { Send } from 'lucide-react';
+
+interface FormData {
+  fullName: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  fullName?: string;
+  email?: string;
+  message?: string;
+}
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState<FormData>({
+    fullName: '',
+    email: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Full name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    // Check if EmailJS configuration exists
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey || 
+        serviceId === 'your_service_id' || 
+        templateId === 'your_template_id' || 
+        publicKey === 'your_public_key') {
+      setSubmitStatus('error');
+      setErrorMessage('Email service is not properly configured. Please contact the administrator.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current!,
+        publicKey
+      );
+      
+      setSubmitStatus('success');
+      setFormData({ fullName: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+      setErrorMessage(
+        error instanceof Error 
+          ? `Error sending message: ${error.message}`
+          : 'An unexpected error occurred. Please try again later.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+  };
+
+  return (
+    <motion.form
+      ref={formRef}
+      onSubmit={handleSubmit}
+      className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10 max-w-3xl mx-auto mt-12"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="space-y-6">
+        <div>
+          <label htmlFor="fullName" className="block text-white font-medium mb-2">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleInputChange}
+            className={`w-full px-4 py-2 bg-white/10 border ${
+              errors.fullName ? 'border-red-500' : 'border-white/20'
+            } rounded-xl text-white focus:outline-none focus:border-[#F39C35] transition-colors`}
+            placeholder="Enter your full name"
+          />
+          {errors.fullName && (
+            <p className="mt-1 text-red-500 text-sm">{errors.fullName}</p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-white font-medium mb-2">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            className={`w-full px-4 py-2 bg-white/10 border ${
+              errors.email ? 'border-red-500' : 'border-white/20'
+            } rounded-xl text-white focus:outline-none focus:border-[#F39C35] transition-colors font-mono text-sm`}
+            placeholder="Enter your email address"
+            style={{ minWidth: '300px' }}
+          />
+          {errors.email && (
+            <p className="mt-1 text-red-500 text-sm">{errors.email}</p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block text-white font-medium mb-2">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            rows={4}
+            className={`w-full px-4 py-2 bg-white/10 border ${
+              errors.message ? 'border-red-500' : 'border-white/20'
+            } rounded-xl text-white focus:outline-none focus:border-[#F39C35] transition-colors resize-none`}
+            placeholder="Enter your message"
+          />
+          {errors.message && (
+            <p className="mt-1 text-red-500 text-sm">{errors.message}</p>
+          )}
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`w-full bg-[#F39C35] text-white py-3 px-6 rounded-xl flex items-center justify-center space-x-2 
+              ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#F39C35]/80'} 
+              transition-colors shadow-lg`}
+          >
+            <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+            <Send className="w-5 h-5" />
+          </button>
+        </div>
+
+        {submitStatus === 'success' && (
+          <p className="text-green-500 text-center font-medium">
+            Thank you! Your message has been sent successfully.
+          </p>
+        )}
+        {submitStatus === 'error' && (
+          <p className="text-red-500 text-center font-medium">
+            {errorMessage || 'Sorry, there was an error sending your message. Please try again.'}
+          </p>
+        )}
+      </div>
+    </motion.form>
+  );
+};
+
+export default ContactForm;
