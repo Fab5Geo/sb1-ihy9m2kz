@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import CommunityImpact from './components/CommunityImpact';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import GridBackground from './components/GridBackground';
@@ -26,6 +27,7 @@ function App() {
             <Hero />
             <About />
             <Services />
+            <Testimonials />
             <CommunityImpact />
             <Contact />
           </main>

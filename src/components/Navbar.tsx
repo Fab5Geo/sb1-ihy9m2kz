@@ -27,6 +27,7 @@ const Navbar = () => {
               <a href="#about" className="text-gray-700 hover:text-[#F39C35] transition-colors">{t('nav.about')}</a>
               <a href="#services" className="text-gray-700 hover:text-[#F39C35] transition-colors">{t('nav.services')}</a>
               <a href="#community" className="text-gray-700 hover:text-[#F39C35] transition-colors">{t('nav.community')}</a>
+              <a href="#testimonials" className="text-gray-700 hover:text-[#F39C35] transition-colors">{t('nav.testimonials')}</a>
               <a href="#contact" className="bg-[#F39C35] text-white px-5 py-2.5 rounded-2xl hover:bg-[#F39C35]/80 transition-all shadow-sm">
                 {t('nav.contact')}
               </a>
@@ -55,6 +56,7 @@ const Navbar = () => {
               <a href="#about" className="block px-4 py-2.5 text-gray-700 hover:text-[#F39C35] rounded-xl hover:bg-gray-50 transition-all">{t('nav.about')}</a>
               <a href="#services" className="block px-4 py-2.5 text-gray-700 hover:text-[#F39C35] rounded-xl hover:bg-gray-50 transition-all">{t('nav.services')}</a>
               <a href="#community" className="block px-4 py-2.5 text-gray-700 hover:text-[#F39C35] rounded-xl hover:bg-gray-50 transition-all">{t('nav.community')}</a>
+              <a href="#testimonials" className="block px-4 py-2.5 text-gray-700 hover:text-[#F39C35] rounded-xl hover:bg-gray-50 transition-all">{t('nav.testimonials')}</a>
               <a href="#contact" className="block px-4 py-2.5 text-[#F39C35] font-medium rounded-xl hover:bg-gray-50 transition-all mb-2">{t('nav.contact')}</a>
             </div>
           </div>

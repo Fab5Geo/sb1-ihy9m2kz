@@ -11,6 +11,7 @@ export const translations: Translations = {
     'nav.services': 'Services',
     'nav.about': 'About',
     'nav.community': 'Community',
+    'nav.testimonials': 'Testimonials',
     'nav.contact': 'Contact Us',
 
     // Hero
@@ -123,6 +124,19 @@ export const translations: Translations = {
     'contact.form.error': 'Sorry, there was an error sending your message. Please try again.',
     'contact.form.notConfigured': 'Email service is not properly configured. Please contact the administrator.',
 
+    // Testimonials Section (placeholder slots — replace with real client quotes)
+    'testimonials.title': 'What Our Clients Say',
+    'testimonials.subtitle': 'Trusted by mining operators and engineering teams to bring clarity to their most complex geotechnical and tailings challenges.',
+    'testimonials.1.quote': 'FAB5 brought rigour and clarity to our tailings governance review. Their GISTM gap assessment gave our board a defensible roadmap and the confidence to act.',
+    'testimonials.1.author': 'Operations Director',
+    'testimonials.1.role': 'Gold Mining Operation',
+    'testimonials.2.quote': 'Their independent technical advisory was invaluable during our design review. Complex geotechnical data was translated into decisions our whole team could stand behind.',
+    'testimonials.2.author': 'Tailings Engineering Lead',
+    'testimonials.2.role': 'Base Metals Producer',
+    'testimonials.3.quote': 'The risk assessment work — FMEA, credible failure scenarios and TARPs — was thorough, practical and clearly communicated to our regulators.',
+    'testimonials.3.author': 'HSE Manager',
+    'testimonials.3.role': 'Mining Consultancy',
+
     // Footer
     'footer.tagline': 'Geotechnical and mining engineering consulting — tailings & dam safety, GISTM/TSM/CMSI compliance, governance, risk assessment and technical advisory.',
     'footer.services': 'Services',
@@ -137,6 +151,7 @@ export const translations: Translations = {
     'nav.services': 'Serviços',
     'nav.about': 'Sobre',
     'nav.community': 'Comunidade',
+    'nav.testimonials': 'Depoimentos',
     'nav.contact': 'Contato',
 
     // Hero
@@ -248,6 +263,19 @@ export const translations: Translations = {
     'contact.form.success': 'Obrigado! Sua mensagem foi enviada com sucesso.',
     'contact.form.error': 'Desculpe, ocorreu um erro ao enviar sua mensagem. Tente novamente.',
     'contact.form.notConfigured': 'O serviço de e-mail não está configurado corretamente. Entre em contato com o administrador.',
+
+    // Testimonials Section (slots de exemplo — substitua por depoimentos reais)
+    'testimonials.title': 'O Que Dizem Nossos Clientes',
+    'testimonials.subtitle': 'A confiança de operadores de mineração e equipes de engenharia para trazer clareza aos seus desafios geotécnicos e de rejeitos mais complexos.',
+    'testimonials.1.quote': 'A FAB5 trouxe rigor e clareza à revisão de governança dos nossos rejeitos. A avaliação de lacunas do GISTM deu ao nosso conselho um roteiro defensável e a confiança para agir.',
+    'testimonials.1.author': 'Diretor de Operações',
+    'testimonials.1.role': 'Operação de Mineração de Ouro',
+    'testimonials.2.quote': 'A consultoria técnica independente foi inestimável durante a revisão do nosso projeto. Dados geotécnicos complexos foram traduzidos em decisões que toda a equipe pôde apoiar.',
+    'testimonials.2.author': 'Líder de Engenharia de Rejeitos',
+    'testimonials.2.role': 'Produtora de Metais Básicos',
+    'testimonials.3.quote': 'O trabalho de avaliação de riscos — FMEA, cenários de falha credíveis e TARPs — foi minucioso, prático e comunicado com clareza aos nossos reguladores.',
+    'testimonials.3.author': 'Gerente de SSMA',
+    'testimonials.3.role': 'Consultoria de Mineração',
 
     // Footer
     'footer.tagline': 'Consultoria em engenharia geotécnica e de mineração — segurança de barragens e rejeitos, conformidade GISTM/TSM/CMSI, governança, avaliação de riscos e consultoria técnica.',
