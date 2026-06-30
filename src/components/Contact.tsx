@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import ContactForm from './ContactForm';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -39,10 +41,9 @@ const Contact = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Contact Us</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">{t('contact.title')}</h2>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto">
-            Ready to transform your geotechnical challenges into opportunities? 
-            Get in touch with our team today.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -52,7 +53,7 @@ const Contact = () => {
             className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-[#F39C35]/30 transition-all group"
           >
             <Phone className="w-12 h-12 text-[#F39C35] mb-4 group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-semibold text-white mb-3">Phone</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">{t('contact.phone')}</h3>
             <a 
               href="tel:+17052800432" 
               className="text-slate-300 hover:text-[#F39C35] transition-colors"
@@ -66,7 +67,7 @@ const Contact = () => {
             className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-[#F39C35]/30 transition-all group"
           >
             <Mail className="w-12 h-12 text-[#F39C35] mb-4 group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-semibold text-white mb-3">Email</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">{t('contact.email')}</h3>
             <div className="flex justify-center">
               <a 
                 href="mailto:fabricio.benjamim@me.com" 
@@ -82,9 +83,9 @@ const Contact = () => {
             className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-[#F39C35]/30 transition-all group"
           >
             <MapPin className="w-12 h-12 text-[#F39C35] mb-4 group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-semibold text-white mb-3">Location</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">{t('contact.location')}</h3>
             <p className="text-slate-300">
-              Sudbury, Ontario, Canada
+              {t('contact.location.value')}
             </p>
           </motion.div>
         </div>

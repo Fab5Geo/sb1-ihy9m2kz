@@ -98,7 +98,38 @@ export const translations: Translations = {
     'about.impact.region2': 'Oceania',
     'about.impact.region3': 'South Pacific',
     'about.impact.region4': 'International Standards Development',
-    'about.cta': 'Connect with Our Team'
+    'about.cta': 'Connect with Our Team',
+
+    // Contact Section
+    'contact.title': 'Contact Us',
+    'contact.subtitle': 'Ready to transform your geotechnical and tailings challenges into opportunities? Get in touch with our team today.',
+    'contact.phone': 'Phone',
+    'contact.email': 'Email',
+    'contact.location': 'Location',
+    'contact.location.value': 'Sudbury, Ontario, Canada',
+    'contact.form.name': 'Full Name',
+    'contact.form.name.placeholder': 'Enter your full name',
+    'contact.form.name.error': 'Full name is required',
+    'contact.form.email': 'Email Address',
+    'contact.form.email.placeholder': 'Enter your email address',
+    'contact.form.email.error': 'Email is required',
+    'contact.form.email.invalid': 'Please enter a valid email address',
+    'contact.form.message': 'Message',
+    'contact.form.message.placeholder': 'Tell us about your project',
+    'contact.form.message.error': 'Message is required',
+    'contact.form.send': 'Send Message',
+    'contact.form.sending': 'Sending...',
+    'contact.form.success': 'Thank you! Your message has been sent successfully.',
+    'contact.form.error': 'Sorry, there was an error sending your message. Please try again.',
+    'contact.form.notConfigured': 'Email service is not properly configured. Please contact the administrator.',
+
+    // Footer
+    'footer.tagline': 'Geotechnical and mining engineering consulting — tailings & dam safety, GISTM/TSM/CMSI compliance, governance, risk assessment and technical advisory.',
+    'footer.services': 'Services',
+    'footer.company': 'Company',
+    'footer.contact': 'Contact',
+    'footer.rights': 'All rights reserved.',
+    'footer.builtIn': 'Serving the Americas, Oceania & South Pacific'
   },
   'pt-BR': {
     // Navigation
@@ -193,6 +224,37 @@ export const translations: Translations = {
     'about.impact.region2': 'Oceania',
     'about.impact.region3': 'Pacífico Sul',
     'about.impact.region4': 'Desenvolvimento de Padrões Internacionais',
-    'about.cta': 'Conecte-se com Nossa Equipe'
+    'about.cta': 'Conecte-se com Nossa Equipe',
+
+    // Contact Section
+    'contact.title': 'Entre em Contato',
+    'contact.subtitle': 'Pronto para transformar seus desafios geotécnicos e de rejeitos em oportunidades? Fale com nossa equipe hoje mesmo.',
+    'contact.phone': 'Telefone',
+    'contact.email': 'E-mail',
+    'contact.location': 'Localização',
+    'contact.location.value': 'Sudbury, Ontário, Canadá',
+    'contact.form.name': 'Nome Completo',
+    'contact.form.name.placeholder': 'Digite seu nome completo',
+    'contact.form.name.error': 'O nome completo é obrigatório',
+    'contact.form.email': 'Endereço de E-mail',
+    'contact.form.email.placeholder': 'Digite seu endereço de e-mail',
+    'contact.form.email.error': 'O e-mail é obrigatório',
+    'contact.form.email.invalid': 'Por favor, insira um e-mail válido',
+    'contact.form.message': 'Mensagem',
+    'contact.form.message.placeholder': 'Conte-nos sobre o seu projeto',
+    'contact.form.message.error': 'A mensagem é obrigatória',
+    'contact.form.send': 'Enviar Mensagem',
+    'contact.form.sending': 'Enviando...',
+    'contact.form.success': 'Obrigado! Sua mensagem foi enviada com sucesso.',
+    'contact.form.error': 'Desculpe, ocorreu um erro ao enviar sua mensagem. Tente novamente.',
+    'contact.form.notConfigured': 'O serviço de e-mail não está configurado corretamente. Entre em contato com o administrador.',
+
+    // Footer
+    'footer.tagline': 'Consultoria em engenharia geotécnica e de mineração — segurança de barragens e rejeitos, conformidade GISTM/TSM/CMSI, governança, avaliação de riscos e consultoria técnica.',
+    'footer.services': 'Serviços',
+    'footer.company': 'Empresa',
+    'footer.contact': 'Contato',
+    'footer.rights': 'Todos os direitos reservados.',
+    'footer.builtIn': 'Atuando nas Américas, Oceania e Pacífico Sul'
   }
 };

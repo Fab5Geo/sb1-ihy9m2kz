@@ -9,15 +9,17 @@ const Navbar = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="fixed w-full z-50 px-4 sm:px-6 lg:px-8 pt-4">
+    <nav className="fixed w-full z-50 px-4 sm:px-6 lg:px-8 pt-4" aria-label="Primary">
       <div className="backdrop-blur-xl bg-white/80 rounded-3xl shadow-lg border border-white/20">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between h-16 px-6">
             <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center space-x-3">
-                <Logo />
-                <span className="text-gray-800 text-2xl font-bold">GeoSolutions</span>
-              </div>
+              <a href="#home" className="flex-shrink-0 flex items-center space-x-3" aria-label="FAB5 GeoSolutions home">
+                <span className="text-[#F39C35]"><Logo /></span>
+                <span className="text-gray-800 text-2xl font-bold">
+                  FAB5 <span className="text-[#F39C35]">GeoSolutions</span>
+                </span>
+              </a>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -33,7 +35,13 @@ const Navbar = () => {
 
             <div className="md:hidden flex items-center space-x-4">
               <LanguageSelector />
-              <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-700"
+                aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+              >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
@@ -41,7 +49,7 @@ const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden" id="mobile-menu">
             <div className="px-4 pt-2 pb-3 space-y-1">
               <a href="#home" className="block px-4 py-2.5 text-gray-700 hover:text-[#F39C35] rounded-xl hover:bg-gray-50 transition-all">{t('nav.home')}</a>
               <a href="#about" className="block px-4 py-2.5 text-gray-700 hover:text-[#F39C35] rounded-xl hover:bg-gray-50 transition-all">{t('nav.about')}</a>
