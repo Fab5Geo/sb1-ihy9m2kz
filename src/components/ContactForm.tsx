@@ -61,15 +61,21 @@ const ContactForm = () => {
     setSubmitStatus('idle');
     setErrorMessage('');
 
-    // Check if EmailJS configuration exists
+    // Check if EmailJS is actually configured. Treat empty values and any
+    // leftover placeholder (e.g. "your_public_key", "YOUR-PUBLIC-KEY-HERE")
+    // as "not configured" so users see a friendly message instead of a
+    // cryptic EmailJS error.
+    const isPlaceholder = (value: string | undefined): boolean => {
+      if (!value || !value.trim()) return true;
+      const normalized = value.trim().toLowerCase();
+      return normalized.includes('your') || normalized.includes('here');
+    };
+
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    if (!serviceId || !templateId || !publicKey || 
-        serviceId === 'your_service_id' || 
-        templateId === 'your_template_id' || 
-        publicKey === 'your_public_key') {
+    if (isPlaceholder(serviceId) || isPlaceholder(templateId) || isPlaceholder(publicKey)) {
       setSubmitStatus('error');
       setErrorMessage(t('contact.form.notConfigured'));
       setIsSubmitting(false);
