@@ -11,6 +11,7 @@ export const translations: Translations = {
     'nav.services': 'Services',
     'nav.about': 'About',
     'nav.community': 'Community',
+    'nav.testimonials': 'Testimonials',
     'nav.contact': 'Contact Us',
 
     // Hero
@@ -30,15 +31,15 @@ export const translations: Translations = {
     'services.title': 'Our Services',
     'services.subtitle': 'Comprehensive professional services designed to transform your organization through strategic innovation and technical excellence.',
     'services.governance.title': 'Governance and Organizational Design',
-    'services.governance.description': 'Strategic frameworks and structures to optimize organizational efficiency and decision-making processes.',
+    'services.governance.description': 'We design accountability structures, decision-making frameworks and operating models that align mining organizations with their tailings, safety and ESG obligations. From board-level oversight to site governance, we clarify roles, escalation paths and the Accountable Executive responsibilities required under the GISTM — delivering a transparent, audit-ready structure that scales across jurisdictions.',
     'services.compliance.title': 'Conformance and Compliance Framework',
-    'services.compliance.description': 'Comprehensive compliance solutions ensuring adherence to industry standards and regulatory requirements.',
+    'services.compliance.description': 'We build and operationalize conformance programs that align your operations with the Global Industry Standard on Tailings Management (GISTM), Towards Sustainable Mining (TSM) and regional regulatory frameworks. Our gap assessments, controls and documentation turn complex standards into practical, auditable workflows, so you can prepare for independent reviews and demonstrate continuous conformance with confidence.',
     'services.advisory.title': 'Technical Advisory',
-    'services.advisory.description': 'Expert guidance and consultation on technical implementations, architecture, and best practices.',
+    'services.advisory.description': 'Our engineers provide independent technical advisory across the mine and tailings lifecycle — from site characterization and design review to construction assurance and closure planning. We act as a trusted second set of eyes for owners’ teams, EPCMs and review boards, translating geotechnical data into clear, defensible decisions on engagements ranging from focused peer reviews to embedded long-term support.',
     'services.innovation.title': 'Innovation and Technology',
-    'services.innovation.description': 'Cutting-edge solutions and transformative technologies to drive business growth and digital evolution.',
+    'services.innovation.description': 'We help operators modernize through automation, instrumentation and digital monitoring that strengthen tailings surveillance and operational efficiency. From real-time geotechnical instrumentation to integrated data ecosystems, we connect the field, engineering and management with actionable insight — and prioritize the technology initiatives that deliver measurable safety and productivity gains.',
     'services.risk.title': 'Risk Assessment',
-    'services.risk.description': 'Thorough evaluation and mitigation strategies to identify and address potential risks and vulnerabilities.',
+    'services.risk.description': 'We identify, quantify and prioritize geotechnical, tailings and operational risks using structured, defensible assessment methods. Our work spans failure modes and effects analysis (FMEA), credible failure scenarios, trigger action response plans (TARPs) and risk registers aligned with GISTM expectations, delivering mitigation strategies that are practical to implement and clear to communicate to regulators and stakeholders.',
 
     // Community Impact Section
     'community.title': 'Community Impact',
@@ -98,7 +99,51 @@ export const translations: Translations = {
     'about.impact.region2': 'Oceania',
     'about.impact.region3': 'South Pacific',
     'about.impact.region4': 'International Standards Development',
-    'about.cta': 'Connect with Our Team'
+    'about.cta': 'Connect with Our Team',
+
+    // Contact Section
+    'contact.title': 'Contact Us',
+    'contact.subtitle': 'Ready to transform your geotechnical and tailings challenges into opportunities? Get in touch with our team today.',
+    'contact.phone': 'Phone',
+    'contact.email': 'Email',
+    'contact.location': 'Location',
+    'contact.location.value': 'Ontario, Canada',
+    'contact.form.name': 'Full Name',
+    'contact.form.name.placeholder': 'Enter your full name',
+    'contact.form.name.error': 'Full name is required',
+    'contact.form.email': 'Email Address',
+    'contact.form.email.placeholder': 'Enter your email address',
+    'contact.form.email.error': 'Email is required',
+    'contact.form.email.invalid': 'Please enter a valid email address',
+    'contact.form.message': 'Message',
+    'contact.form.message.placeholder': 'Tell us about your project',
+    'contact.form.message.error': 'Message is required',
+    'contact.form.send': 'Send Message',
+    'contact.form.sending': 'Sending...',
+    'contact.form.success': 'Thank you! Your message has been sent successfully.',
+    'contact.form.error': 'Sorry, there was an error sending your message. Please try again.',
+    'contact.form.notConfigured': 'Email service is not properly configured. Please contact the administrator.',
+
+    // Testimonials Section (placeholder slots — replace with real client quotes)
+    'testimonials.title': 'What Our Clients Say',
+    'testimonials.subtitle': 'Trusted by mining operators and engineering teams to bring clarity to their most complex geotechnical and tailings challenges.',
+    'testimonials.1.quote': 'FAB5 brought rigour and clarity to our tailings governance review. Their GISTM gap assessment gave our board a defensible roadmap and the confidence to act.',
+    'testimonials.1.author': 'Operations Director',
+    'testimonials.1.role': 'Gold Mining Operation',
+    'testimonials.2.quote': 'Their independent technical advisory was invaluable during our design review. Complex geotechnical data was translated into decisions our whole team could stand behind.',
+    'testimonials.2.author': 'Tailings Engineering Lead',
+    'testimonials.2.role': 'Base Metals Producer',
+    'testimonials.3.quote': 'The risk assessment work — FMEA, credible failure scenarios and TARPs — was thorough, practical and clearly communicated to our regulators.',
+    'testimonials.3.author': 'HSE Manager',
+    'testimonials.3.role': 'Mining Consultancy',
+
+    // Footer
+    'footer.tagline': 'Geotechnical and mining engineering consulting — tailings & dam safety, GISTM/TSM/CMSI compliance, governance, risk assessment and technical advisory.',
+    'footer.services': 'Services',
+    'footer.company': 'Company',
+    'footer.contact': 'Contact',
+    'footer.rights': 'All rights reserved.',
+    'footer.builtIn': 'Serving the Americas, Oceania & South Pacific'
   },
   'pt-BR': {
     // Navigation
@@ -106,6 +151,7 @@ export const translations: Translations = {
     'nav.services': 'Serviços',
     'nav.about': 'Sobre',
     'nav.community': 'Comunidade',
+    'nav.testimonials': 'Depoimentos',
     'nav.contact': 'Contato',
 
     // Hero
@@ -125,15 +171,15 @@ export const translations: Translations = {
     'services.title': 'Nossos Serviços',
     'services.subtitle': 'Serviços profissionais abrangentes projetados para transformar sua organização através de inovação estratégica e excelência técnica.',
     'services.governance.title': 'Governança e Design Organizacional',
-    'services.governance.description': 'Frameworks e estruturas estratégicas para otimizar a eficiência organizacional e os processos de tomada de decisão.',
+    'services.governance.description': 'Projetamos estruturas de responsabilização, modelos de governança e fluxos de decisão que alinham as organizações de mineração às suas obrigações de rejeitos, segurança e ESG. Da supervisão a nível de conselho à governança de site, esclarecemos papéis, vias de escalonamento e as responsabilidades do Executivo Responsável exigidas pelo GISTM — entregando uma estrutura transparente e pronta para auditoria, que escala entre jurisdições.',
     'services.compliance.title': 'Framework de Conformidade e Regulamentação',
-    'services.compliance.description': 'Soluções abrangentes de conformidade garantindo aderência aos padrões da indústria e requisitos regulatórios.',
+    'services.compliance.description': 'Construímos e operacionalizamos programas de conformidade que alinham suas operações ao Padrão Global da Indústria para Gestão de Rejeitos (GISTM), ao Towards Sustainable Mining (TSM) e a marcos regulatórios regionais. Nossas avaliações de lacunas, controles e documentação transformam normas complexas em fluxos de trabalho práticos e auditáveis, permitindo preparar revisões independentes e demonstrar conformidade contínua com confiança.',
     'services.advisory.title': 'Consultoria Técnica',
-    'services.advisory.description': 'Orientação especializada e consultoria em implementações técnicas, arquitetura e melhores práticas.',
+    'services.advisory.description': 'Nossos engenheiros oferecem consultoria técnica independente em todo o ciclo de vida da mina e dos rejeitos — da caracterização do local e revisão de projeto à garantia de construção e planejamento de fechamento. Atuamos como um segundo par de olhos confiável para equipes proprietárias, EPCMs e conselhos de revisão, traduzindo dados geotécnicos em decisões claras e defensáveis, de revisões por pares focadas a apoio de longo prazo.',
     'services.innovation.title': 'Inovação e Tecnologia',
-    'services.innovation.description': 'Soluções de ponta e tecnologias transformadoras para impulsionar o crescimento dos negócios e a evolução digital.',
+    'services.innovation.description': 'Ajudamos operadores a se modernizar por meio de automação, instrumentação e monitoramento digital que fortalecem a vigilância de rejeitos e a eficiência operacional. Da instrumentação geotécnica em tempo real a ecossistemas de dados integrados, conectamos campo, engenharia e gestão com informações acionáveis — priorizando as iniciativas tecnológicas que geram ganhos mensuráveis de segurança e produtividade.',
     'services.risk.title': 'Avaliação de Riscos',
-    'services.risk.description': 'Estratégias completas de avaliação e mitigação para identificar e abordar riscos e vulnerabilidades potenciais.',
+    'services.risk.description': 'Identificamos, quantificamos e priorizamos riscos geotécnicos, de rejeitos e operacionais usando métodos de avaliação estruturados e defensáveis. Nosso trabalho abrange análise de modos e efeitos de falha (FMEA), cenários de falha credíveis, planos de resposta a gatilhos (TARPs) e registros de risco alinhados às expectativas do GISTM, entregando estratégias de mitigação práticas de implementar e claras de comunicar a reguladores e partes interessadas.',
 
     // Community Impact Section
     'community.title': 'Impacto na Comunidade',
@@ -193,6 +239,50 @@ export const translations: Translations = {
     'about.impact.region2': 'Oceania',
     'about.impact.region3': 'Pacífico Sul',
     'about.impact.region4': 'Desenvolvimento de Padrões Internacionais',
-    'about.cta': 'Conecte-se com Nossa Equipe'
+    'about.cta': 'Conecte-se com Nossa Equipe',
+
+    // Contact Section
+    'contact.title': 'Entre em Contato',
+    'contact.subtitle': 'Pronto para transformar seus desafios geotécnicos e de rejeitos em oportunidades? Fale com nossa equipe hoje mesmo.',
+    'contact.phone': 'Telefone',
+    'contact.email': 'E-mail',
+    'contact.location': 'Localização',
+    'contact.location.value': 'Ontário, Canadá',
+    'contact.form.name': 'Nome Completo',
+    'contact.form.name.placeholder': 'Digite seu nome completo',
+    'contact.form.name.error': 'O nome completo é obrigatório',
+    'contact.form.email': 'Endereço de E-mail',
+    'contact.form.email.placeholder': 'Digite seu endereço de e-mail',
+    'contact.form.email.error': 'O e-mail é obrigatório',
+    'contact.form.email.invalid': 'Por favor, insira um e-mail válido',
+    'contact.form.message': 'Mensagem',
+    'contact.form.message.placeholder': 'Conte-nos sobre o seu projeto',
+    'contact.form.message.error': 'A mensagem é obrigatória',
+    'contact.form.send': 'Enviar Mensagem',
+    'contact.form.sending': 'Enviando...',
+    'contact.form.success': 'Obrigado! Sua mensagem foi enviada com sucesso.',
+    'contact.form.error': 'Desculpe, ocorreu um erro ao enviar sua mensagem. Tente novamente.',
+    'contact.form.notConfigured': 'O serviço de e-mail não está configurado corretamente. Entre em contato com o administrador.',
+
+    // Testimonials Section (slots de exemplo — substitua por depoimentos reais)
+    'testimonials.title': 'O Que Dizem Nossos Clientes',
+    'testimonials.subtitle': 'A confiança de operadores de mineração e equipes de engenharia para trazer clareza aos seus desafios geotécnicos e de rejeitos mais complexos.',
+    'testimonials.1.quote': 'A FAB5 trouxe rigor e clareza à revisão de governança dos nossos rejeitos. A avaliação de lacunas do GISTM deu ao nosso conselho um roteiro defensável e a confiança para agir.',
+    'testimonials.1.author': 'Diretor de Operações',
+    'testimonials.1.role': 'Operação de Mineração de Ouro',
+    'testimonials.2.quote': 'A consultoria técnica independente foi inestimável durante a revisão do nosso projeto. Dados geotécnicos complexos foram traduzidos em decisões que toda a equipe pôde apoiar.',
+    'testimonials.2.author': 'Líder de Engenharia de Rejeitos',
+    'testimonials.2.role': 'Produtora de Metais Básicos',
+    'testimonials.3.quote': 'O trabalho de avaliação de riscos — FMEA, cenários de falha credíveis e TARPs — foi minucioso, prático e comunicado com clareza aos nossos reguladores.',
+    'testimonials.3.author': 'Gerente de SSMA',
+    'testimonials.3.role': 'Consultoria de Mineração',
+
+    // Footer
+    'footer.tagline': 'Consultoria em engenharia geotécnica e de mineração — segurança de barragens e rejeitos, conformidade GISTM/TSM/CMSI, governança, avaliação de riscos e consultoria técnica.',
+    'footer.services': 'Serviços',
+    'footer.company': 'Empresa',
+    'footer.contact': 'Contato',
+    'footer.rights': 'Todos os direitos reservados.',
+    'footer.builtIn': 'Atuando nas Américas, Oceania e Pacífico Sul'
   }
 };

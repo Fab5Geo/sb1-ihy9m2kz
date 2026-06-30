@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { Send } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface FormData {
   fullName: string;
@@ -16,6 +17,7 @@ interface FormErrors {
 }
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -31,17 +33,17 @@ const ContactForm = () => {
     const newErrors: FormErrors = {};
     
     if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full name is required';
+      newErrors.fullName = t('contact.form.name.error');
     }
-    
+
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('contact.form.email.error');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = t('contact.form.email.invalid');
     }
-    
+
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = t('contact.form.message.error');
     }
     
     setErrors(newErrors);
@@ -59,17 +61,23 @@ const ContactForm = () => {
     setSubmitStatus('idle');
     setErrorMessage('');
 
-    // Check if EmailJS configuration exists
+    // Check if EmailJS is actually configured. Treat empty values and any
+    // leftover placeholder (e.g. "your_public_key", "YOUR-PUBLIC-KEY-HERE")
+    // as "not configured" so users see a friendly message instead of a
+    // cryptic EmailJS error.
+    const isPlaceholder = (value: string | undefined): boolean => {
+      if (!value || !value.trim()) return true;
+      const normalized = value.trim().toLowerCase();
+      return normalized.includes('your') || normalized.includes('here');
+    };
+
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    if (!serviceId || !templateId || !publicKey || 
-        serviceId === 'your_service_id' || 
-        templateId === 'your_template_id' || 
-        publicKey === 'your_public_key') {
+    if (isPlaceholder(serviceId) || isPlaceholder(templateId) || isPlaceholder(publicKey)) {
       setSubmitStatus('error');
-      setErrorMessage('Email service is not properly configured. Please contact the administrator.');
+      setErrorMessage(t('contact.form.notConfigured'));
       setIsSubmitting(false);
       return;
     }
@@ -119,7 +127,7 @@ const ContactForm = () => {
       <div className="space-y-6">
         <div>
           <label htmlFor="fullName" className="block text-white font-medium mb-2">
-            Full Name
+            {t('contact.form.name')}
           </label>
           <input
             type="text"
@@ -130,7 +138,7 @@ const ContactForm = () => {
             className={`w-full px-4 py-2 bg-white/10 border ${
               errors.fullName ? 'border-red-500' : 'border-white/20'
             } rounded-xl text-white focus:outline-none focus:border-[#F39C35] transition-colors`}
-            placeholder="Enter your full name"
+            placeholder={t('contact.form.name.placeholder')}
           />
           {errors.fullName && (
             <p className="mt-1 text-red-500 text-sm">{errors.fullName}</p>
@@ -139,7 +147,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="email" className="block text-white font-medium mb-2">
-            Email Address
+            {t('contact.form.email')}
           </label>
           <input
             type="email"
@@ -150,7 +158,7 @@ const ContactForm = () => {
             className={`w-full px-4 py-2 bg-white/10 border ${
               errors.email ? 'border-red-500' : 'border-white/20'
             } rounded-xl text-white focus:outline-none focus:border-[#F39C35] transition-colors font-mono text-sm`}
-            placeholder="Enter your email address"
+            placeholder={t('contact.form.email.placeholder')}
             style={{ minWidth: '300px' }}
           />
           {errors.email && (
@@ -160,7 +168,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="message" className="block text-white font-medium mb-2">
-            Message
+            {t('contact.form.message')}
           </label>
           <textarea
             id="message"
@@ -171,7 +179,7 @@ const ContactForm = () => {
             className={`w-full px-4 py-2 bg-white/10 border ${
               errors.message ? 'border-red-500' : 'border-white/20'
             } rounded-xl text-white focus:outline-none focus:border-[#F39C35] transition-colors resize-none`}
-            placeholder="Enter your message"
+            placeholder={t('contact.form.message.placeholder')}
           />
           {errors.message && (
             <p className="mt-1 text-red-500 text-sm">{errors.message}</p>
@@ -186,19 +194,19 @@ const ContactForm = () => {
               ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#F39C35]/80'} 
               transition-colors shadow-lg`}
           >
-            <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+            <span>{isSubmitting ? t('contact.form.sending') : t('contact.form.send')}</span>
             <Send className="w-5 h-5" />
           </button>
         </div>
 
         {submitStatus === 'success' && (
           <p className="text-green-500 text-center font-medium">
-            Thank you! Your message has been sent successfully.
+            {t('contact.form.success')}
           </p>
         )}
         {submitStatus === 'error' && (
           <p className="text-red-500 text-center font-medium">
-            {errorMessage || 'Sorry, there was an error sending your message. Please try again.'}
+            {errorMessage || t('contact.form.error')}
           </p>
         )}
       </div>
